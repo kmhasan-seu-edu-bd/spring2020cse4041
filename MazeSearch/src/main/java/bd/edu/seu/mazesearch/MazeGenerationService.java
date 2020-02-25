@@ -37,8 +37,8 @@ public class MazeGenerationService {
                 endCol = random.nextInt(cols);
             } while (startRow == endRow && startCol == endCol);
 
-            String startEnd = String.format("%d %d %d %d\n",
-                    startRow, startCol, endRow, endCol);
+            String startEnd = String.format("%d %d %d %d %d %d\n",
+                    rows, cols, startRow, startCol, endRow, endCol);
             outputFile.writeBytes(startEnd);
             double blockingFactor = percentageOfBlockedCells / 100.0;
             StringBuffer stringBuffer = new StringBuffer();
