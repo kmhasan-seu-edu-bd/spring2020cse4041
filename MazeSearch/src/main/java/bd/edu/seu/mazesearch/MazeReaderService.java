@@ -23,7 +23,7 @@ public class MazeReaderService {
             for (int r = 0; r < rows; r++) {
                 String line = lineList.get(r + 1);
                 for (int c = 0; c < cols; c++)
-                    maze.setCell(r, c, line.charAt(c) == '.');
+                    maze.setCell(r, c, line.charAt(c) != '#');
             }
 
             return maze;
