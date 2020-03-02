@@ -29,4 +29,18 @@ public class State {
     public int hashCode() {
         return row * 900 + col;
     }
+    
+    @Override
+    public String toString() {
+//        return "(" + row + "," + col + ")";
+        return String.format("(%d,%d)", row, col);
+    }
 }
+
+
+
+
+
+
+
+

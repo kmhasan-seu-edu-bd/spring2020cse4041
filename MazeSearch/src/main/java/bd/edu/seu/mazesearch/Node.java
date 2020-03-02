@@ -9,10 +9,11 @@ package bd.edu.seu.mazesearch;
  *
  * @author seu
  */
-public class Node {
+public class Node implements Comparable<Node> {
     State state;
     int pathCost;
     Node parent;
+    Action action;
 
     public Node() {
         pathCost = 0;
@@ -24,9 +25,20 @@ public class Node {
         this.state = state;
     }
     
-    public Node(State state, int pathCost, Node parent) {
+    public Node(State state, int pathCost, Node parent, Action action) {
         this.state = state;
         this.pathCost = pathCost;
         this.parent = parent;
+        this.action = action;
+    }
+
+    @Override
+    public int compareTo(Node that) {
+        int a = this.pathCost;
+        int b = that.pathCost;
+        return a - b;
     }
 }
+
+
+
