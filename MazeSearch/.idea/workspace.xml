@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55ac1b97-75f8-404c-a800-1bc5aeddff9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bd/edu/seu/mazesearch/Maze.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bd/edu/seu/mazesearch/MazeReaderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bd/edu/seu/mazesearch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bd/edu/seu/mazesearch/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bd/edu/seu/mazesearch/MazeGenerationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bd/edu/seu/mazesearch/MazeGenerationService.java" afterDir="false" />
-    </list>
+    <list default="true" id="55ac1b97-75f8-404c-a800-1bc5aeddff9c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +17,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1YJM7SlMUqeZ5FprY3L5CpwxdSX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -34,6 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -77,6 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582656077230</updated>
       <workItem from="1582656086551" duration="2085000" />
+      <workItem from="1585715591140" duration="50000" />
     </task>
     <servers />
   </component>
@@ -108,6 +112,10 @@
       <screen x="1920" y="0" width="1200" height="1920" />
     </state>
     <state x="2107" y="749" key="com.intellij.ide.util.TipDialog/0.840.1920.1032/1920.0.1200.1920@1920.0.1200.1920" timestamp="1582656090791" />
+    <state x="282" y="254" width="1345" height="605" key="new project wizard" timestamp="1585715638009">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="282" y="254" width="1345" height="605" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1585715638009" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">
