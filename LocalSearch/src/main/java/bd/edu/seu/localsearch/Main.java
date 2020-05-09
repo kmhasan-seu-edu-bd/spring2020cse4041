@@ -12,7 +12,8 @@ public class Main {
 
         long start = System.currentTimeMillis();
         for (int i = 0; i < totalTrials; i++) {
-            int board[] = localSearch.randomRestartHillClimbing(n);
+            int board[] = localSearch.simulatedAnnealing(n);
+//            int board[] = localSearch.randomRestartHillClimbing(n);
             int conflicts = localSearch.countConflicts(board);
             if (conflicts == 0)
                 success++;

@@ -1,20 +1,18 @@
 package bd.edu.seu.localsearch;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 public class LocalSearch {
     private final static boolean DEBUG = false;
+    private final Random RANDOM = new Random();
 
     // steepest ascent hill climbing
     public int[] steepestAscentHillClimbing(int n) {
         // TODO note to self: FIX THIS!!!
-        Random random = new Random();
-
         int board[] = new int[n];
         for (int c = 0; c < board.length; c++)
-            board[c] = random.nextInt(n);
+            board[c] = RANDOM.nextInt(n);
         int conflicts = countConflicts(board);
 //        System.out.println(Arrays.toString(board) + ": " + conflicts);
 //
@@ -60,7 +58,7 @@ public class LocalSearch {
         return bestBoard;
     }
 
-    private int[] generateRandomBoard(int n) {
+    public int[] generateRandomBoard(int n) {
         Random random = new Random();
 
         int board[] = new int[n];
@@ -70,7 +68,7 @@ public class LocalSearch {
         return board;
     }
 
-    private int[] getBestNextBoard(int board[]) {
+    public int[] getBestNextBoard(int board[]) {
         int currentConflicts = countConflicts(board);
 
         int minimumConflicts = currentConflicts;
@@ -165,5 +163,60 @@ public class LocalSearch {
             }
 
         return conflicts;
+    }
+
+    public double acceptanceProbability(int currentConflicts,
+                                        int previousConflicts,
+                                        double currentTemperature) {
+        if (currentConflicts < previousConflicts)
+            return 1;
+
+        double delta = currentConflicts - previousConflicts;
+        return Math.exp(-delta / currentTemperature);
+    }
+
+    public int[] simulatedAnnealing(int n) {
+        final double initialTemperature = 10;
+        final double coolingRate = 1E-5;
+
+        double currentTemperature = initialTemperature;
+
+        int currentBoard[] = generateRandomBoard(n);
+        int bestBoard[] = new int[n];
+        System.arraycopy(currentBoard, 0, bestBoard, 0, n);
+
+        int currentConflicts = countConflicts(currentBoard);
+        int previousConflicts;
+        int bestConflicts = currentConflicts;
+
+        int iteration = 1;
+
+        while (currentTemperature > 0 && bestConflicts > 0) {
+            previousConflicts = currentConflicts;
+
+            int randomColumn = RANDOM.nextInt(n);
+            int randomRow = RANDOM.nextInt(n);
+            int currentRow = currentBoard[randomRow]; // remember where the queen was
+            currentBoard[randomColumn] = randomRow;
+            currentConflicts = countConflicts(currentBoard);
+
+            double random = Math.random();
+            if (random < acceptanceProbability(currentConflicts, previousConflicts, currentTemperature)) {
+                // keep the change
+                if (currentConflicts < bestConflicts) {
+                    bestConflicts = currentConflicts;
+                    System.arraycopy(currentBoard, 0, bestBoard, 0, n);
+                }
+            } else {
+                // reject the change, go back to how the column was
+                currentBoard[randomColumn] = currentRow;
+            }
+
+            currentTemperature -= coolingRate;
+            iteration++;
+        }
+
+//        System.out.println(bestConflicts);
+        return bestBoard;
     }
 }
